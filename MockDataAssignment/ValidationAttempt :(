@@ -1,0 +1,35 @@
+#!/bin/bash
+#Greets user and shows their choices
+function Greeting()
+{
+  echo "Hello! Please choose one of the following"
+  echo " 1 Display UserInfo "
+  echo " 2 Add new UserInfo "
+  read ans
+}
+
+Greeting
+#saves data to a variable
+#ans=${1}
+
+#error checker to make sure it recieves a correct command
+
+#checking for type of response 
+if [[ $ans = "1" ]] #displays parsed data
+    then
+    read -p "What is your first name: " fname;
+    sh parser.sh MOCK_DATA.csv | grep -A5 "First name: $fname$"
+	#exit 0;
+elif [[ $ans = "2" ]] #user prompts to add data
+    then
+    read -p "enter first name: " fname;
+	read -p "enter last name: " lname;
+	read -p "enter email: " email;
+	read -p "enter username: " username;
+	read -p "enter password: " password;
+	
+    echo "$fname,$lname,$email,$username,$password" >> MOCK_DATA.csv; #adding data to csv file
+    
+	echo "UserInfo added!"
+    exit 0;
+fi 
