@@ -5,7 +5,7 @@
 # After Calculation is done it will close
 Echo Calculator Time Ekekekekekekekekekekekekekekek
 if [[ $# -eq 2 ]] ; then
-    # get number1 and number2(number) values from the arguments
+    # get number1 and number2 values from the arguments
     number1=$1
     number2=$2
     # Segment Below Offers Choices
